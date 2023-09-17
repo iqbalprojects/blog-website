@@ -1,59 +1,22 @@
-"use client";
-
 import PopularPosts from "@/components/PopularPosts";
-import Slider from "@/components/Slider";
-import { SwiperSlide } from "swiper/react";
-import Image from "next/image";
 import AllPosts from "@/components/AllPosts";
+import Carousel from "@/components/Carousel";
 
-export default function Home() {
+export default async function Home() {
+    const { banners } = await fetch(
+        "https://s2fb.lezenda.com/api/v1/foodmaniasg.com/banners/"
+    ).then((response) => response.json());
+
+    const { posts } = await fetch(
+        "https://s2fb.lezenda.com/api/v1/lezenda.com/posts/"
+    ).then((response) => response.json());
     return (
         <>
-            <Slider
-                loop={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-            >
-                <SwiperSlide>
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/images/2.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image
-                        src="/images/3.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video"
-                    />
-                </SwiperSlide>
-            </Slider>
+            <Carousel banners={banners.hero_slider} />
             <main className="px-4 my-10">
                 <div className="container mx-auto flex flex-col gap-y-10">
                     <PopularPosts />
-                    <AllPosts />
+                    <AllPosts posts={posts.data} />
                 </div>
             </main>
         </>

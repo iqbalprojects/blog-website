@@ -1,3 +1,5 @@
+"use client";
+
 import Arrow from "./Icons/Arrow";
 import Rectangle from "./Icons/Rectangle";
 import { useRef, useState } from "react";

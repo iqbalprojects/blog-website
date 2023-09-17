@@ -1,4 +1,4 @@
-const ArrowLong = () => {
+const ArrowLong = (props) => {
     return (
         <>
             <svg
@@ -7,6 +7,7 @@ const ArrowLong = () => {
                 viewBox="0 0 12 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                {...props}
             >
                 <path
                     d="M1 11L11 1M11 1H1M11 1V11"

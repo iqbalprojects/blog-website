@@ -2,7 +2,7 @@ import Image from "next/image";
 import ArrowLong from "./Icons/ArrowLong";
 import Rectangle from "./Icons/Rectangle";
 
-const AllPosts = () => {
+const AllPosts = ({ posts }) => {
     return (
         <section className="flex flex-col gap-y-5">
             <div className="flex items-center gap-x-2">
@@ -10,162 +10,45 @@ const AllPosts = () => {
                 <h2 className="font-medium text-xl">New Posts</h2>
             </div>
             <div className="grid grid-cols-2 gap-3">
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
+                {posts.map((post) => (
+                    <article className="bg-white p-2 rounded-lg">
+                        <Image
+                            src={
+                                post.image_url
+                                    ? "https://s2fb.lezenda.com/storage/" +
+                                      post.image_url
+                                    : "/images/no_image.jpeg"
+                            }
+                            width={500}
+                            height={500}
+                            alt="Picture of the author"
+                            className={`${
+                                post.image_url
+                                    ? "object-cover"
+                                    : "object-contain"
+                            } aspect-video rounded-lg mb-2`}
+                        />
+                        <div className="text-black flex flex-col gap-y-1 text-start">
+                            <p className="text-[#6941C6] text-xs font-medium">
+                                {new Date(post.published_at).toLocaleDateString(
+                                    "EN",
+                                    {
+                                        weekday: "long",
+                                        day: "numeric",
+                                        month: "short",
+                                        year: "numeric",
+                                    }
+                                )}
                             </p>
-                            <ArrowLong />
+                            <div className="flex items-center gap-x-3 justify-between">
+                                <p className="font-semibold text-sm line-clamp-2">
+                                    {post.title}
+                                </p>
+                                <ArrowLong className="shrink-0 h-2" />
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
-                            </p>
-                            <ArrowLong />
-                        </div>
-                    </div>
-                </article>
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
-                            </p>
-                            <ArrowLong />
-                        </div>
-                    </div>
-                </article>
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
-                            </p>
-                            <ArrowLong />
-                        </div>
-                    </div>
-                </article>
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
-                            </p>
-                            <ArrowLong />
-                        </div>
-                    </div>
-                </article>
-                <article className="bg-white p-2 rounded-lg">
-                    <Image
-                        src="/images/1.jpg"
-                        width={500}
-                        height={500}
-                        priority={true}
-                        alt="Picture of the author"
-                        className="aspect-video rounded-lg mb-2"
-                    />
-                    <div className="text-black flex flex-col gap-y-1 text-start">
-                        <p className="text-[#6941C6] text-xs font-medium">
-                            {new Date("01-01-2023").toLocaleDateString("EN", {
-                                weekday: "long",
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <div className="flex items-center justify-between">
-                            <p className="font-semibold text-sm line-clamp-2">
-                                UX review presentations
-                            </p>
-                            <ArrowLong />
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                ))}
             </div>
             <button className="border border-white py-2 font-medium rounded-lg">
                 LOAD MORE
