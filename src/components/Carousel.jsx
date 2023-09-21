@@ -31,7 +31,9 @@ const Carousel = ({ banners }) => {
                             loading="eager"
                             priority
                             alt="Picture of the author"
-                            className="aspect-video"
+                            style={{
+                                aspectRatio: 16 / 9,
+                            }}
                         />
                     </SwiperSlide>
                 ))}
