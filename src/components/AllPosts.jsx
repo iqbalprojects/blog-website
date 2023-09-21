@@ -24,7 +24,7 @@ const AllPosts = ({ posts }) => {
                             quality={50}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             loading="eager"
-                            priority
+                            priority={true}
                             alt="Picture of the author"
                             className={`${
                                 post.image_url
