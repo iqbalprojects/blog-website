@@ -71,10 +71,10 @@ const PopularPosts = ({ slide }) => {
                 <SwiperSlide className="p-3">
                     <Image
                         src="/images/1.jpg"
-                        width={250}
-                        height={250}
-                        quality={30}
-                        loading="lazy"
+                        width={300}
+                        height={300}
+                        quality={50}
+                        priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />
@@ -114,10 +114,10 @@ const PopularPosts = ({ slide }) => {
                 <SwiperSlide className="p-3">
                     <Image
                         src="/images/2.jpg"
-                        width={250}
-                        height={250}
-                        quality={30}
-                        loading="lazy"
+                        width={300}
+                        height={300}
+                        quality={50}
+                        priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />
@@ -157,10 +157,10 @@ const PopularPosts = ({ slide }) => {
                 <SwiperSlide className="p-3">
                     <Image
                         src="/images/3.jpg"
-                        width={250}
-                        height={250}
-                        quality={30}
-                        loading="lazy"
+                        width={300}
+                        height={300}
+                        quality={50}
+                        priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />

@@ -19,9 +19,9 @@ const AllPosts = ({ posts }) => {
                                       post.image_url
                                     : "/images/no_image.jpeg"
                             }
-                            width={250}
-                            height={250}
-                            quality={30}
+                            width={300}
+                            height={300}
+                            quality={50}
                             priority={true}
                             alt="Picture of the author"
                             className={`${
