@@ -74,7 +74,7 @@ const PopularPosts = ({ slide }) => {
                         width={250}
                         height={250}
                         quality={30}
-                        priority={true}
+                        loading="lazy"
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />
@@ -117,7 +117,7 @@ const PopularPosts = ({ slide }) => {
                         width={250}
                         height={250}
                         quality={30}
-                        priority={true}
+                        loading="lazy"
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />
@@ -160,7 +160,7 @@ const PopularPosts = ({ slide }) => {
                         width={250}
                         height={250}
                         quality={30}
-                        priority={true}
+                        loading="lazy"
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
                     />
