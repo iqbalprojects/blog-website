@@ -10,7 +10,6 @@ const Slider = (props) => {
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
-                className="mySwiper"
                 modules={[Autoplay, Pagination]}
                 {...props}
             >

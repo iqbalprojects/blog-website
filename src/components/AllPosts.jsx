@@ -19,13 +19,15 @@ const AllPosts = ({ posts }) => {
                                       post.image_url
                                     : "/images/no_image.jpeg"
                             }
-                            width={500}
-                            height={500}
+                            width={250}
+                            height={250}
+                            quality={30}
+                            priority={true}
                             alt="Picture of the author"
                             className={`${
                                 post.image_url
                                     ? "object-cover"
-                                    : "object-contain"
+                                    : "object-contain scale-75"
                             } aspect-video rounded-lg mb-2`}
                         />
                         <div className="text-black flex flex-col gap-y-1 text-start">
@@ -50,7 +52,7 @@ const AllPosts = ({ posts }) => {
                     </article>
                 ))}
             </div>
-            <button className="border border-white py-2 font-medium rounded-lg">
+            <button className="border border-black tracking-wide py-2 font-medium rounded-lg">
                 LOAD MORE
             </button>
         </section>

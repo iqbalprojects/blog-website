@@ -2,16 +2,21 @@
 
 import Arrow from "./Icons/Arrow";
 import Rectangle from "./Icons/Rectangle";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "./Slider";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import ArrowLong from "./Icons/ArrowLong";
+import { useRouter } from "next/navigation";
 
-const PopularPosts = () => {
+const PopularPosts = ({ slide }) => {
+    const router = useRouter();
     const swiperRef = useRef();
-    const [isBeginning, setIsBeginning] = useState(true);
-    const [isEnd, setIsEnd] = useState(false);
+    const [isSwiper, setIsSwiper] = useState({});
+
+    useEffect(() => {
+        swiperRef.current.slideTo(slide - 1);
+    }, [slide]);
 
     return (
         <section className="flex flex-col gap-y-5">
@@ -21,32 +26,54 @@ const PopularPosts = () => {
                     <h2 className="font-medium text-xl">Popular Posts</h2>
                 </div>
                 <div className="flex items-center gap-x-4">
-                    <button onClick={() => swiperRef.current.slidePrev()}>
+                    <button
+                        id="prev"
+                        aria-label="Prev Slide"
+                        onClick={() => swiperRef.current.slidePrev()}
+                    >
                         <Arrow
                             className="rotate-180"
-                            fillOpacity={isBeginning ? "0.5" : "1"}
+                            fillOpacity={slide === 0 ? "0.5" : "1"}
                         />
                     </button>
-                    <button onClick={() => swiperRef.current.slideNext()}>
-                        <Arrow fillOpacity={isEnd ? "0.5" : "1"} />
+                    <button
+                        id="next"
+                        aria-label="Next Slide"
+                        onClick={() => swiperRef.current.slideNext()}
+                    >
+                        <Arrow
+                            fillOpacity={
+                                isSwiper.slides?.length === slide ? "0.5" : "1"
+                            }
+                        />
                     </button>
                 </div>
             </div>
 
             <Slider
+                className="bg-white rounded-xl"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
+                    setIsSwiper(swiper);
                 }}
                 onSlideChange={(swiper) => {
-                    setIsBeginning(swiper.isBeginning);
-                    setIsEnd(swiper.isEnd);
+                    if (swiper.activeIndex === 0) {
+                        router.push("/");
+                    } else {
+                        router.push(
+                            `?${new URLSearchParams({
+                                slide: swiper.activeIndex + 1,
+                            })}`
+                        );
+                    }
                 }}
             >
-                <SwiperSlide className="p-3 rounded-xl">
+                <SwiperSlide className="p-3">
                     <Image
                         src="/images/1.jpg"
-                        width={500}
-                        height={500}
+                        width={250}
+                        height={250}
+                        quality={30}
                         priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
@@ -66,7 +93,7 @@ const PopularPosts = () => {
                             </p>
                             <ArrowLong />
                         </div>
-                        <p className="font-light text-slate-500 mb-2">
+                        <p className="font-normal text-slate-600 mb-2">
                             How do you create compelling presentations that wow
                             your colleagues and impress your managers?
                         </p>
@@ -84,11 +111,12 @@ const PopularPosts = () => {
                         </ul>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="p-3 rounded-xl">
+                <SwiperSlide className="p-3">
                     <Image
                         src="/images/2.jpg"
-                        width={500}
-                        height={500}
+                        width={250}
+                        height={250}
+                        quality={30}
                         priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
@@ -108,7 +136,7 @@ const PopularPosts = () => {
                             </p>
                             <ArrowLong />
                         </div>
-                        <p className="font-light text-slate-500 mb-2">
+                        <p className="font-normal text-slate-600 mb-2">
                             How do you create compelling presentations that wow
                             your colleagues and impress your managers?
                         </p>
@@ -126,11 +154,12 @@ const PopularPosts = () => {
                         </ul>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="p-3 rounded-xl">
+                <SwiperSlide className="p-3">
                     <Image
                         src="/images/3.jpg"
-                        width={500}
-                        height={500}
+                        width={250}
+                        height={250}
+                        quality={30}
                         priority={true}
                         alt="Picture of the author"
                         className="aspect-video rounded-xl mb-4"
@@ -150,7 +179,7 @@ const PopularPosts = () => {
                             </p>
                             <ArrowLong />
                         </div>
-                        <p className="font-light text-slate-500 mb-2">
+                        <p className="font-normal text-slate-600 mb-2">
                             How do you create compelling presentations that wow
                             your colleagues and impress your managers?
                         </p>

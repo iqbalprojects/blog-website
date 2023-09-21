@@ -24,8 +24,9 @@ const Carousel = ({ banners }) => {
                                 "https://s2fb.lezenda.com/storage/" +
                                 banner.image_url
                             }
-                            width={500}
-                            height={500}
+                            width={250}
+                            height={250}
+                            quality={30}
                             priority={true}
                             alt="Picture of the author"
                             className="aspect-video"
