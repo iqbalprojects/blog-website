@@ -22,7 +22,9 @@ const AllPosts = ({ posts }) => {
                             width={300}
                             height={300}
                             quality={50}
-                            priority={true}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            loading="lazy"
+                            priority
                             alt="Picture of the author"
                             className={`${
                                 post.image_url
