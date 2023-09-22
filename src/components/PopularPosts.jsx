@@ -74,9 +74,7 @@ const PopularPosts = ({ slide }) => {
                         width={300}
                         height={300}
                         quality={50}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        loading="eager"
-                        priority
+                        priority={true}
                         alt="Picture of the author"
                         style={{
                             borderRadius: "12px",
@@ -123,9 +121,7 @@ const PopularPosts = ({ slide }) => {
                         width={300}
                         height={300}
                         quality={50}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        loading="eager"
-                        priority
+                        priority={true}
                         alt="Picture of the author"
                         style={{
                             borderRadius: "12px",
@@ -172,9 +168,7 @@ const PopularPosts = ({ slide }) => {
                         width={300}
                         height={300}
                         quality={50}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        loading="eager"
-                        priority
+                        priority={true}
                         alt="Picture of the author"
                         style={{
                             borderRadius: "12px",
