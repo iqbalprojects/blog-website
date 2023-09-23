@@ -76,11 +76,7 @@ const PopularPosts = ({ slide }) => {
                         quality={50}
                         priority={true}
                         alt="Picture of the author"
-                        style={{
-                            borderRadius: "12px",
-                            marginBottom: "16px",
-                            aspectRatio: 16 / 9,
-                        }}
+                        className="aspect-video rounded-xl mb-4"
                     />
                     <div className="text-black flex flex-col gap-y-3 text-start">
                         <p className="text-[#6941C6] text-sm font-medium">
@@ -123,11 +119,7 @@ const PopularPosts = ({ slide }) => {
                         quality={50}
                         priority={true}
                         alt="Picture of the author"
-                        style={{
-                            borderRadius: "12px",
-                            marginBottom: "16px",
-                            aspectRatio: 16 / 9,
-                        }}
+                        className="aspect-video rounded-xl mb-4"
                     />
                     <div className="text-black flex flex-col gap-y-3 text-start">
                         <p className="text-[#6941C6] text-sm font-medium">
@@ -170,11 +162,7 @@ const PopularPosts = ({ slide }) => {
                         quality={50}
                         priority={true}
                         alt="Picture of the author"
-                        style={{
-                            borderRadius: "12px",
-                            marginBottom: "16px",
-                            aspectRatio: 16 / 9,
-                        }}
+                        className="aspect-video rounded-xl mb-4"
                     />
                     <div className="text-black flex flex-col gap-y-3 text-start">
                         <p className="text-[#6941C6] text-sm font-medium">

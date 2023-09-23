@@ -29,9 +29,7 @@ const Carousel = ({ banners }) => {
                             quality={50}
                             priority={true}
                             alt="Picture of the author"
-                            style={{
-                                aspectRatio: 16 / 9,
-                            }}
+                            className="aspect-video"
                         />
                     </SwiperSlide>
                 ))}
